@@ -3,6 +3,7 @@
 string inputPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\INPUT.txt");
 string outputPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\OUTPUT.txt");
 string[] inputValues = Utils.ReadInput(inputPath);
+if (inputValues == null) return;
 string[] solutions = new string[inputValues.Length];
 
 for (int i = 0; i < inputValues.Length; i++)

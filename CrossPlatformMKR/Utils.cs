@@ -11,10 +11,21 @@ namespace CrossPlatformMKR
     {
         public static string[] ReadInput(string path)
         {
+            if (!File.Exists(path))
+            {
+                Console.WriteLine("File not found: " + path);
+                return null;
+            }
+
             return File.ReadLines(path).ToArray();
         }
         public static void WriteResult(string path, string[] result)
         {
+            if (!File.Exists(path))
+            {
+                Console.WriteLine("File not found: " + path);
+                return;
+            }
             File.WriteAllLines(path, result);
         }
         public static bool isInputValid(string input)
